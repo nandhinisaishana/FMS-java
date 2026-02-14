@@ -29,12 +29,12 @@ public class RestExceptionHandler {
     }
 }
 */
-
-import com.vinsup.fms.dto.ApiResponse;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
-import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
+	
+	import com.vinsup.fms.dto.ApiResponse;
+	import org.springframework.http.ResponseEntity;
+	import org.springframework.web.bind.MethodArgumentNotValidException;
+	import org.springframework.web.bind.annotation.ExceptionHandler;
+	import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.stream.Collectors;
 
@@ -48,6 +48,8 @@ public class RestExceptionHandler {
                 .stream()
                 .map(err -> err.getField() + ": " + err.getDefaultMessage())
                 .collect(Collectors.joining(", "));
+        
+        		 
         return ResponseEntity.badRequest().body(new ApiResponse(errorMsg));
     }
 

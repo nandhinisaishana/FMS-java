@@ -1,10 +1,8 @@
-/*package com.vinsup.fms.model;
+package com.vinsup.fms.model;
 
-import java.time.LocalDateTime;
 import jakarta.persistence.*;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import java.time.LocalDateTime;
 
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name="blocks")
 public class Block {
@@ -16,79 +14,47 @@ public class Block {
     @Column(nullable=false)
     private String name;
 
+    @Column(name="description")
+    private String description;
+    
     @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="building_id", nullable=false)
     private Building building;
+    
+    @Column(name = "created_by", nullable = false)//
+    private String createdBy;//
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="created_by", nullable=false)
-    private User createdBy;
 
-    @Column(name="created_at", nullable=false)
+    @Column(name="created_at", nullable=false, updatable=false)
     private LocalDateTime createdAt;
-
-    @Column(name="updated_at")
-    private LocalDateTime updatedAt;
 
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
     }
 
-    @PreUpdate
-    public void preUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
+    // Getters & Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
     
-    //INSERT INTO buildings (id, name) VALUES (1, 'Building A');
-    //INSERT INTO users (id, name, email) VALUES (2, 'Admin User', 'admin@example.com');
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Building getBuilding() {
-        return building;
-    }
-
-    public void setBuilding(Building building) {
-        this.building = building;
-    }
-
-    public User getCreatedBy() {
+    public Building getBuilding() { return building; }
+    public void setBuilding(Building building) { this.building = building; }
+    
+    public String getCreatedBy() {
         return createdBy;
     }
 
-    public void setCreatedBy(User createdBy) {
+    public void setCreatedBy(String createdBy) {
         this.createdBy = createdBy;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
+}
 
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-}*/

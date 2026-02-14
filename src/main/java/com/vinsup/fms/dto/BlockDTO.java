@@ -1,4 +1,4 @@
-/*package com.vinsup.fms.dto;
+package com.vinsup.fms.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,4 +16,3 @@ public class BlockDTO {
 	private String name;
 	private Long buildingId;
 }
-*/

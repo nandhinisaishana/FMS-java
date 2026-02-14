@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 public class MailService {
     private final JavaMailSender mailSender;
     public MailService(JavaMailSender mailSender) { this.mailSender = mailSender; }
-
+    
     public void sendOtpEmail(String to, String otp, int expiryMinutes) {
         SimpleMailMessage msg = new SimpleMailMessage();
         msg.setTo(to);

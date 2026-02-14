@@ -1,4 +1,4 @@
-/*package com.vinsup.fms.dto;
+package com.vinsup.fms.dto;
 
 public class DepartmentDTO {
     private String name;
@@ -8,5 +8,5 @@ public class DepartmentDTO {
     public void setName(String name) { 
     	this.name = name; 
     	}
-}*/
+}
  

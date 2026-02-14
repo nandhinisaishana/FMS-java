@@ -11,10 +11,10 @@ public class VerifyOtpRequest {
     @NotBlank
     private String otp;
 
-    @NotBlank
-    private String newPassword;
+    //@NotBlank
+    //private String newPassword;
 
-    @NotBlank
+    //@NotBlank
     private String confirmPassword;
 
     // Getters and Setters
@@ -24,9 +24,9 @@ public class VerifyOtpRequest {
     public String getOtp() { return otp; }
     public void setOtp(String otp) { this.otp = otp; }
 
-    public String getNewPassword() { return newPassword; }
-    public void setNewPassword(String newPassword) { this.newPassword = newPassword; }
+    //public String getNewPassword() { return newPassword; }
+    //public void setNewPassword(String newPassword) { this.newPassword = newPassword; }
 
-    public String getConfirmPassword() { return confirmPassword; }
-    public void setConfirmPassword(String confirmPassword) { this.confirmPassword = confirmPassword; }
+    //public String getConfirmPassword() { return confirmPassword; }
+    //public void setConfirmPassword(String confirmPassword) { this.confirmPassword = confirmPassword; }
 }

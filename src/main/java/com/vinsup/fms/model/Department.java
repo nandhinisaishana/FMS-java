@@ -1,4 +1,4 @@
-/*package com.vinsup.fms.model;
+package com.vinsup.fms.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -50,6 +50,6 @@ public class Department {
  
     public LocalDateTime getUpdatedAt() { return updatedAt; }
     public void setUpdatedAt(LocalDateTime updatedAt) { this.updatedAt = updatedAt; }
-}*/
+}
  
  

@@ -1,4 +1,5 @@
-/*package com.vinsup.fms.service;
+
+package com.vinsup.fms.service;
 
 import com.vinsup.fms.model.Building;
 import com.vinsup.fms.repository.BuildingRepository;
@@ -17,21 +18,28 @@ public class BuildingService {
     public BuildingService(BuildingRepository buildingRepository) {
         this.buildingRepository = buildingRepository;
     }
-
+    
+//create
     public Building saveBuilding(Building building) {
         return buildingRepository.save(building);
     }
 
+    //getmapping byid
     public Optional<Building> getBuildingById(Long id) {
         return buildingRepository.findById(id);
     }
 
-
+    //getall
     public List<Building> getAllBuildings() {
         return buildingRepository.findAll();
     }
 
+    //delete
     public void deleteBuilding(Long id) {
         buildingRepository.deleteById(id);
     }
-}*/
+
+    public long countBuildings() {
+        return buildingRepository.count();
+    }
+}

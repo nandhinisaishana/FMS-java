@@ -1,7 +1,5 @@
+
 package com.vinsup.fms;
-
-
-/*
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -22,15 +20,19 @@ public class CorsConfig {
                        // .allowCredentials(true);  // If you use cookies or sessions
             }
         };
-    */
+    }
+} 
 
+/*
+package com.vinsup.fms;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-/*
+
+
 @Configuration
 public class CorsConfig {
 
@@ -49,7 +51,10 @@ public class CorsConfig {
             }
         };
     }
-}*/
+}
+/*
+
+
 
 @Configuration
 public class CorsConfig {
@@ -63,6 +68,11 @@ public class CorsConfig {
             }
         };
     }
-}
+}*/
+
+
+      
+
+
 
 

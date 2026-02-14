@@ -1,4 +1,4 @@
-/*package com.vinsup.fms.service;
+package com.vinsup.fms.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,16 +12,18 @@ public class DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepo;
 
-    public Department createDepartment(DepartmentDTO dto) {
+    public Department createDepartment(DepartmentDTO dto)
+    {
         Department dept = new Department();
         dept.setName(dto.getName());
         return departmentRepo.save(dept);
     }
 
-    public List<Department> getAllDepartments() {
+    public List<Department> getAllDepartments() 
+    {
         return departmentRepo.findAll();
     }
 }
 
-*/
+
 

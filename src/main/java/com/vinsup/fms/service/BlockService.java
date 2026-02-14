@@ -1,7 +1,9 @@
-/*package com.vinsup.fms.service;
+package com.vinsup.fms.service;
 
 import com.vinsup.fms.model.Block;
+import com.vinsup.fms.model.Building;
 import com.vinsup.fms.repository.BlockRepository;
+import com.vinsup.fms.repository.BuildingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,13 +14,14 @@ import java.util.Optional;
 public class BlockService {
 
     private final BlockRepository blockRepository;
+    private final BuildingRepository buildingRepository;
 
     @Autowired
-    public BlockService(BlockRepository blockRepository) {
+    public BlockService(BlockRepository blockRepository, BuildingRepository buildingRepository) {
         this.blockRepository = blockRepository;
+        this.buildingRepository = buildingRepository;
     }
 
-   
     public Block saveBlock(Block block) {
         return blockRepository.save(block);
     }
@@ -34,4 +37,18 @@ public class BlockService {
     public void deleteBlock(Long id) {
         blockRepository.deleteById(id);
     }
-}*/
+
+    //public Optional<Building> getBuildingById(Long id) {//this one
+    //   return buildingRepository.findById(id);
+    //}
+    
+    public Optional<Building> getBuildingByName(String buildingName) {
+        return buildingRepository.findByName(buildingName);
+    }
+
+  
+
+}
+
+
+

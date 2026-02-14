@@ -1,157 +1,54 @@
-/*package com.vinsup.fms.model;
-
-import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.PrePersist;
-import jakarta.persistence.PreUpdate;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name="rooms")
-public class Room {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(nullable=false)
-	private String roomNumber;
-	
-	@Column
-	private String type;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="floor_id", nullable=false)
-	private Floor floor;
-	
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="created_by", nullable=false)
-	private User createdBy;
-	
-	@Column(name="created_at, nullable=false")
-	private LocalDateTime createdAt;
-	
-	
-
-	@Column(name="updated_at")
-	private LocalDateTime updatedAt;
-	
-	@PrePersist
-	public void prePersist() {
-		createdAt = LocalDateTime.now();
-	}
-	
-	@PreUpdate
-	public void preUpdate() {
-		createdAt = LocalDateTime.now();
-	}
-}*/
-/*
 package com.vinsup.fms.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="rooms")
-public class Room {
+@Table(name = "rooms")
+public class Room{
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable=false)
+    @Column(nullable = false)
     private String roomNumber;
 
-    @Column
-    private String type;
+    @Column(name = "description")
+    private String description;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="floor_id", nullable=false)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "floor_id", nullable = false)
     private Floor floor;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="created_by", nullable=false)
-    private User createdBy;
+    @Column(name = "created_by", nullable = false)
+    private String createdBy;
 
-    @Column(name="created_at", nullable=false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
-
-    @Column(name="updated_at")
-    private LocalDateTime updatedAt;
 
     @PrePersist
     public void prePersist() {
         createdAt = LocalDateTime.now();
     }
 
-    @PreUpdate
-    public void preUpdate() {
-        updatedAt = LocalDateTime.now();
-    }
+    // Getters & Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public Long getId() {
-        return id;
-    }
+    public String getRoomNumber() { return roomNumber; }
+    public void setRoomNumber(String roomNumber) { this.roomNumber = roomNumber; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public String getRoomNumber() {
-        return roomNumber;
-    }
+    public Floor getFloor() { return floor; }
+    public void setFloor(Floor floor) { this.floor = floor; }
 
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
+    public String getCreatedBy() { return createdBy; }
+    public void setCreatedBy(String createdBy) { this.createdBy = createdBy; }
 
-    public String getType() {
-        return type;
-    }
+    public LocalDateTime getCreatedAt() { return createdAt; }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
-    public Floor getFloor() {
-        return floor;
-    }
-
-    public void setFloor(Floor floor) {
-        this.floor = floor;
-    }
-
-    public User getCreatedBy() {
-        return createdBy;
-    }
-
-    public void setCreatedBy(User createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+	
 }
-*/

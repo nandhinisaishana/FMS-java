@@ -1,5 +1,7 @@
 package com.vinsup.fms.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -12,8 +14,17 @@ public class User {
     private String email;
     private String password;
 
-    @ManyToOne
-    private Role role;
+//    @ManyToOne
+//    private Role role;
+//    @JoinColumn(name = "role_id") 
+
+    
+    
+    @Column(name = "role_id")
+    private Long role;
+    
+    //@Column(nullable = false, updatable = false) 
+   // private LocalDateTime createdAt = LocalDateTime.now();
 
     // Getters and Setters
     public Long getId() { return id; }
@@ -28,8 +39,12 @@ public class User {
     public String getPassword() { return password; }
     public void setPassword(String password) { this.password = password; }
 
-    public Role getRole() { return role; }
-    public void setRole(Role role) { this.role = role; }
+    public Long getRole() { return role; }
+    public void setRole(Long role) { this.role = role; }
+    
+    //public LocalDateTime getCreatedAt() { return createdAt; } 
+    //public void setCreatedAt(LocalDateTime createdAt) { this.createdAt = createdAt; }
+    
 
     
 }

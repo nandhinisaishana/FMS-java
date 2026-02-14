@@ -10,4 +10,5 @@ import lombok.*;
 @Builder
 public class BuildingDTO {
 	private String name;
-}*/
+}
+*/
